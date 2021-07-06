@@ -168,6 +168,7 @@ struct PhotoManager {
         var temps: [(collection: PHAssetCollection, assets: PHFetchResult<PHAsset>)] = []
         
         for i in 0 ..< albums.count {
+            if i >= smartAlbums.count { continue }
             let c = smartAlbums[i]
             let assets = PHAsset.fetchAssets(in: c , options: options)
             
